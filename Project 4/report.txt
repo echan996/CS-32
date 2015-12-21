@@ -1,0 +1,43 @@
+1. There are no bugs in the program that I am aware of.
+2. Assuming perfect hash distribution, each of the functions run in the required big-O time.
+3. 
+set(){
+	if the first object in the linked list is a nullptr 
+		add the new node 
+		if it isnt permanent, add it to history
+	else iterate through the linked list until you reach a nullptr
+		if the current node has the same key
+			touch the node and change its value
+			return true
+	add the new node
+	if it isnt permanent, add it history
+	return true
+}
+touch(){
+	iterate through the linked list until you reach a nullptr
+		if the current node has the same key
+			if the node is equal to the history end pointer
+				return true 
+			if the current node is permanent
+				return false
+			relink it in history and update tail and head pointers
+			return true
+	return false
+}
+
+discard(){
+	if the first object matches the key
+		relink the linked list
+		relink the history linked list and update head and tail pointers
+		delete the pointer
+		return true
+	iterate through linked list until you reach a nullptr
+		if the key matches the last object in the history linked list
+			relink the linked list
+			relink the history linked list and update head and tail pointers
+			delete the pointer
+			return true
+	return false
+}
+		
+		
